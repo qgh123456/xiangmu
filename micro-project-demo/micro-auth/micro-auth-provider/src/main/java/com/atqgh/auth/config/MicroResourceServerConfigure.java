@@ -24,4 +24,5 @@ public class MicroResourceServerConfigure extends ResourceServerConfigurerAdapte
                 .authorizeRequests()
                 .antMatchers("/**").authenticated();
     }
+
 }
