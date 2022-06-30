@@ -1,0 +1,50 @@
+server:
+  port: 3333
+  servlet:
+    context-path: /system
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      auto-commit: true
+      connection-test-query: SELECT 1
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      maximum-pool-size: 10
+      minimum-idle: 5
+      pool-name: MyHikariCP
+      password: 123456
+      type: com.zaxxer.hikari.HikariDataSource
+    username: root
+    password: root
+    url: jdbc:mysql://121.43.37.234:3306/micro_system?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  redis:
+    database: 0
+    host: 121.43.37.234
+    port: 6379
+    jedis:
+      pool:
+        min-idle: 8
+        max-idle: 500
+        max-active: 2000
+        max-wait: 10000
+    timeout: 5000
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto  # 让主键自增
+      # 配置逻辑删除 1代表删除 0代表已删除
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 在控制台上打印日志
+logging:
+  level:
+    com.atguigu.gulimall: info
