@@ -11,6 +11,8 @@
 
     <artifactId>micro-common</artifactId>
     <packaging>pom</packaging>
-
+    <modules>
+        <module>micro-common-security</module>
+    </modules>
 
 </project>

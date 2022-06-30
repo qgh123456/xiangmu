@@ -51,6 +51,12 @@
             </dependency>
 
             <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>micro-common-security</artifactId>
+                <version>${current_project.version}</version>
+            </dependency>
+
+            <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
                 <version>${fastjson.version}</version>

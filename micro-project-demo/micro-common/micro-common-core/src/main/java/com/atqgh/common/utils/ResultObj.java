@@ -72,6 +72,7 @@ public class ResultObj extends HashMap<String, Object> {
 		return new ResultObj();
 	}
 
+	@Override
 	public ResultObj put(String key, Object value) {
 		super.put(key, value);
 		return this;
