@@ -20,6 +20,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class RRException extends RuntimeException {
+
 	private static final long serialVersionUID = 1L;
 	
     private String msg;

@@ -5,7 +5,7 @@ server:
 spring:
   datasource:
     username: root
-    password: root
+    password: 123456
     url: jdbc:mysql://121.43.37.234:3306/micro_system?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8
     driver-class-name: com.mysql.cj.jdbc.Driver
   jackson:
@@ -27,13 +27,13 @@ mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 在控制台上打印日志
 
-
-logging:
-  level: info
-
 # 鉴权配置
 security:
   oauth2:
     resource:
       id: ${spring.application.name}
       user-info-uri: http://localhost:4444/auth/user
+
+# 开启资源权限配置
+micro:
+  enableResourceSecurity: true

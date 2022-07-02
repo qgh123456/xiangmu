@@ -23,9 +23,9 @@ import org.springframework.security.oauth2.provider.token.store.redis.RedisToken
 import org.springframework.util.ObjectUtils;
 
 /**
- * 配置授权服务器.
+ * 配置鉴权服务器.
  * @author Mubai
- * @description 授权
+ * @description 鉴权
  * @date 2022/6/18 5:24 下午
  **/
 @Configuration

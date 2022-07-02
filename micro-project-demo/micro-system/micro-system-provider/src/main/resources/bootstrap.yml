@@ -4,7 +4,7 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 127.0.0.1:8848  # 服务的注册中心地址
+        server-addr: 121.43.37.234:8848 # 服务的注册中心地址
 #      config:
 #        server-addr: 127.0.0.1:8848 # 服务的配置中心地址
 #        namespace: 9f44100a-83e1-4fe3-8a83-447ba39b7343

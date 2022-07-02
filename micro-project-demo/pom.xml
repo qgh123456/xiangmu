@@ -9,7 +9,8 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>micro-common</module>
-        <module>micro-common/micro-common-core</module>
+<!--        <module>micro-common/micro-common-core</module>-->
+<!--        <module>micro-common/micro-common-security</module>-->
         <module>micro-auth</module>
         <module>micro-gateway</module>
         <module>micro-system</module>
@@ -17,13 +18,6 @@
     <packaging>pom</packaging>
 
     <description>聚合服务 本人现在开发</description>
-<!--    <modules>-->
-<!--        <module>common-core</module>-->
-<!--        <module>micro-gateway</module>-->
-<!--        <module>micro-auth-provider</module>-->
-<!--        <module>common-cache</module>-->
-<!--        <module>micro-user</module>-->
-<!--    </modules>-->
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

@@ -11,8 +11,10 @@
 
     <artifactId>micro-common</artifactId>
     <packaging>pom</packaging>
+
     <modules>
         <module>micro-common-security</module>
+        <module>micro-common-core</module>
     </modules>
 
 </project>

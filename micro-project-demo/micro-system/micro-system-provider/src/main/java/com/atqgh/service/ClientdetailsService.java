@@ -1,10 +1,5 @@
 package com.atqgh.service;
 
-import com.atqgh.common.utils.PageUtils;
-import com.atqgh.entity.ClientdetailsEntity;
-import com.baomidou.mybatisplus.extension.service.IService;
-import java.util.Map;
-
 /**
  * 
  *
@@ -12,8 +7,7 @@ import java.util.Map;
  * @email 1948727809@qq.com
  * @date 2021-06-11 15:10:08
  */
-public interface ClientdetailsService extends IService<ClientdetailsEntity> {
+public interface ClientdetailsService {
 
-    PageUtils queryPage(Map<String, Object> params);
 }
 

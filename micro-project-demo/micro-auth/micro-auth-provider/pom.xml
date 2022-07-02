@@ -40,7 +40,7 @@
         </dependency>
         <dependency>
             <groupId>org.example</groupId>
-            <artifactId>micro-common-core</artifactId>
+            <artifactId>micro-common-security</artifactId>
         </dependency>
 
         <dependency>

@@ -1,2 +1,3 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.atqgh.security.config.ServerResourceServerConfigure
+com.atqgh.security.config.ServerResourceServerConfigure,\
+com.atqgh.security.config.AuthExceptionConfiguration
