@@ -26,6 +26,9 @@ public class SysUser implements Serializable {
     @TableId
     private Long userId;
 
+    /**
+     * 编码.
+     */
     private String code;
 
     /**

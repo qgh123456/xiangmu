@@ -25,6 +25,12 @@ public class SysUserDto implements Serializable {
     private Long userId;
 
     /**
+     * 编码.
+     */
+    @ApiModelProperty("编码")
+    private String code;
+
+    /**
      * 部门ID.
      */
     @ApiModelProperty("部门ID")
