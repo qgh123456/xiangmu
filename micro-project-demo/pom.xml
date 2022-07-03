@@ -33,6 +33,9 @@
         <validation-api.version>2.0.1.Final</validation-api.version>
         <mybatis-plus.version>3.3.2</mybatis-plus.version>
         <mysql.version>8.0.17</mysql.version>
+        <swagger.version>2.9.2</swagger.version>
+        <springboot.version>2.1.8.RELEASE</springboot.version>
+        <commons-lang3.version>3.11</commons-lang3.version>
     </properties>
 
     <dependencyManagement>
@@ -41,6 +44,18 @@
             <dependency>
                 <groupId>org.example</groupId>
                 <artifactId>micro-common-core</artifactId>
+                <version>${current_project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>micro-system-api</artifactId>
                 <version>${current_project.version}</version>
             </dependency>
 
@@ -92,10 +107,22 @@
                 <version>${validation-api.version}</version>
             </dependency>
 
+            <!-- swagger -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-parent</artifactId>
-                <version>2.1.8.RELEASE</version>
+                <version>${springboot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
