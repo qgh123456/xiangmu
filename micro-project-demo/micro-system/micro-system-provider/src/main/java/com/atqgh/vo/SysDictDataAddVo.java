@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
  * 字典数据表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @ApiModel
 @Data
@@ -20,7 +20,7 @@ public class SysDictDataAddVo implements Serializable {
 
     @ApiModelProperty("字典编码")
     @NotNull
-    private Long code;
+    private Long dictCode;
 
     @ApiModelProperty("字典排序")
     private Integer dictSort;

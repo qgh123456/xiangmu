@@ -10,7 +10,7 @@ import lombok.Data;
  * 定时任务调度日志表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:08
+ * @date 2022-07-11 21:53:59
  */
 @ApiModel
 @Data
@@ -22,7 +22,7 @@ public class SysJobLogDto implements Serializable {
      * 任务日志ID.
      */
     @ApiModelProperty("任务日志ID")
-    private Long id;
+    private Long jobLogId;
 
     /**
      * 任务名称.

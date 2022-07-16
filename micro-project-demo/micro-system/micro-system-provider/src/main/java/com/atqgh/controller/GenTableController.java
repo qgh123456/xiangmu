@@ -24,7 +24,7 @@ import java.util.Set;
  * 代码生成业务.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:08
+ * @date 2022-07-11 21:53:59
  */
 @Api(tags = "代码生成业务")
 @RestController
@@ -33,20 +33,6 @@ public class GenTableController {
 
     @Resource
     private GenTableService genTableService;
-
-//    /**
-//     * 分页查询代码生成业务.
-//     *
-//     * @param queryVo              查询对象实体
-//     * @return page
-//     */
-//    @GetMapping("/page")
-//    @ApiOperation(value = "分页查询代码生成业务", notes = "分页查询代码生成业务", produces = "application/json")
-//    public Result page(@ApiParam("查询参数") GenTableQueryVo queryVo) {
-//
-//        PageInfo<GenTablePageDto> pageInfo = this.genTableService.queryPageByWrapper(queryVo);
-//        return Result.success(pageInfo);
-//    }
 
     /**
      * 新增代码生成业务.
@@ -94,15 +80,15 @@ public class GenTableController {
     /**
     * 查看代码生成业务.
     *
-    * @param id 主键
+    * @param tableId 主键
     * @return 详情信息
     */
-    @GetMapping("/{id}")
-    @ApiOperation(value = "根据id主键查看数据", notes = "根据id主键查看数据", produces = "application/json")
-    public ResultObj getDetail(@PathVariable(value = "id") Long id) {
+    @GetMapping("/{tableId}")
+    @ApiOperation(value = "根据tableId主键查看数据", notes = "根据tableId主键查看数据", produces = "application/json")
+    public ResultObj getDetail(@PathVariable(value = "tableId") Long tableId) {
 
         // 通过主键查看数据
-        GenTableDto dto = this.genTableService.getDetail(id);
+        GenTableDto dto = this.genTableService.getDetail(tableId);
         return ResultObj.ok().setData(dto);
     }
 

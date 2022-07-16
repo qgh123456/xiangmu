@@ -1,7 +1,7 @@
 target
-logs
+../logs
 ### IntelliJ IDEA ###
-.idea
+micro-project-demo/.idea
 *.iws
 *.iml
 *.ipr

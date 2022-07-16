@@ -13,8 +13,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>micro-common-security</module>
         <module>micro-common-core</module>
+        <module>common-security</module>
     </modules>
 
 </project>

@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
  * 用户与岗位关联表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @ApiModel
 @Data
@@ -20,10 +20,10 @@ public class SysUserPostAddVo implements Serializable {
 
     @ApiModelProperty("用户ID")
     @NotNull
-    private String userCode;
+    private Long userId;
 
     @ApiModelProperty("岗位ID")
     @NotNull
-    private String postCode;
+    private Long postId;
 
 }

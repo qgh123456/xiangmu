@@ -12,7 +12,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
  * 代码生成业务表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:08
+ * @date 2022-07-11 21:53:59
  */
 @Data
 @TableName("gen_table")
@@ -24,7 +24,7 @@ public class GenTable implements Serializable {
      * 编号.
      */
     @TableId
-    private Long id;
+    private Long tableId;
 
     /**
      * 表名称.

@@ -10,7 +10,7 @@ import lombok.Data;
  * 代码生成业务表字段.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:08
+ * @date 2022-07-11 21:53:59
  */
 @ApiModel
 @Data
@@ -22,7 +22,7 @@ public class GenTableColumnDto implements Serializable {
      * 编号.
      */
     @ApiModelProperty("编号")
-    private Long id;
+    private Long columnId;
 
     /**
      * 归属表编号.

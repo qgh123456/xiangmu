@@ -1,18 +1,21 @@
 package com.atqgh.mapper;
 
+import com.atqgh.dto.SysPermissDto;
+import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.atqgh.entity.SysMenu;
 import com.atqgh.vo.SysMenuQueryVo;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.BeanUtils;
 
 /**
  * 菜单权限表.
  * 
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @Mapper
 public interface SysMenuMapper extends BaseMapper<SysMenu> {
@@ -32,4 +35,11 @@ public interface SysMenuMapper extends BaseMapper<SysMenu> {
         return wrapper;
     }
 
+    /**
+     * 根据用户id查询数据.
+     *
+     * @param userId 用户id
+     * @return 权限数据
+     */
+    List<SysPermissDto> getPermsByUserId(@Param("userId") Long userId);
 }

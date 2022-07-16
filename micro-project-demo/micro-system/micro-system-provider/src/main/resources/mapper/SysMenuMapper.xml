@@ -4,7 +4,7 @@
 <mapper namespace="com.atqgh.mapper.SysMenuMapper">
 
 	<!-- 结果集映射 -->
-    <resultMap id="sysMenuMap" type="com.atqgh.dto.SysMenuDto" >
+    <resultMap id="sysMenuMap" type="com.atqgh.system.dto.SysMenuDto" >
         <result property="id" column="id"/>
         <result property="menuCode" column="menu_code"/>
         <result property="menuName" column="menu_name"/>
@@ -28,7 +28,7 @@
     </resultMap>
 
     <!-- 结果集映射 -->
-    <resultMap id="sysMenuDetailMap" type="com.atqgh.dto.SysMenuDto" >
+    <resultMap id="sysMenuDetailMap" type="com.atqgh.system.dto.SysMenuDto" >
         <result property="id" column="id"/>
         <result property="menuCode" column="menu_code"/>
         <result property="menuName" column="menu_name"/>
@@ -77,26 +77,26 @@
 
     <!-- 字段分片 -->
     <sql id="Base_Column_Detail">
-        id,
-        menu_code,
-        menu_name,
-        parent_code,
-        order_num,
-        path,
-        component,
-        query,
-        is_frame,
-        is_cache,
-        menu_type,
-        visible,
-        status,
-        perms,
-        icon,
-        create_by,
-        create_time,
-        update_by,
-        update_time,
-        remark
+        srm.id,
+        srm.menu_code,
+        srm.menu_name,
+        srm.parent_code,
+        srm.order_num,
+        srm.path,
+        srm.component,
+        srm.query,
+        srm.is_frame,
+        srm.is_cache,
+        srm.menu_type,
+        srm.visible,
+        srm.status,
+        srm.perms,
+        srm.icon,
+        srm.create_by,
+        srm.create_time,
+        srm.update_by,
+        srm.update_time,
+        srm.remark
     </sql>
 
     <!-- 分页字段分片 -->
@@ -122,5 +122,23 @@
         update_time AS updateTime,
         remark AS remark
     </sql>
+
+    <select id="getPermissions" resultType="com.atqgh.system.dto.SysMenuDto">
+        select <include refid="Base_Column_Detail"></include>
+        from sys_role_menu srm
+        inner join sys_menu sm on srm.menu_code = sm.menu_code
+        where srm.role_code = #{roleCode}
+    </select>
+
+    <select id="getPermsByUserId" resultType="com.atqgh.dto.SysPermissDto">
+        select
+               sm.component ,
+               sm.path,
+               sm.perms
+        from sys_user_role sur
+         inner join sys_role_menu srm on sur.role_id = srm.role_id
+         inner join sys_menu sm on srm.menu_id  = sm.menu_id
+        where sur.user_id = #{userId}
+    </select>
 
 </mapper>

@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 /**
  * 字典类型表.
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @ApiModel
 @Data
@@ -19,7 +19,7 @@ public class SysDictTypeUptVo implements Serializable {
 
     @ApiModelProperty("字典主键")
     @NotNull
-    private Long id;
+    private Long dictId;
 
     @ApiModelProperty("字典名称")
     private String dictName;

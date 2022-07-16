@@ -12,7 +12,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
  * 字典数据表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @Data
 @TableName("sys_dict_data")
@@ -24,7 +24,7 @@ public class SysDictData implements Serializable {
      * 字典编码.
      */
     @TableId
-    private Long code;
+    private Long dictCode;
 
     /**
      * 字典排序.

@@ -9,7 +9,7 @@ import lombok.Data;
  * 用户和角色关联表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @ApiModel
 @Data
@@ -21,12 +21,12 @@ public class SysUserRoleDto implements Serializable {
      * 用户ID.
      */
     @ApiModelProperty("用户ID")
-    private String userCode;
+    private Long userId;
 
     /**
      * 角色ID.
      */
     @ApiModelProperty("角色ID")
-    private String roleCode;
+    private Long roleId;
 
 }

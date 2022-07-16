@@ -12,7 +12,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
  * 定时任务调度表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:53:59
  */
 @Data
 @TableName("sys_job")
@@ -24,7 +24,7 @@ public class SysJob implements Serializable {
      * 任务ID.
      */
     @TableId
-    private Long id;
+    private Long jobId;
 
     /**
      * 任务名称.

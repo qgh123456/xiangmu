@@ -12,7 +12,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
  * 通知公告表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:08
+ * @date 2022-07-11 21:54:00
  */
 @Data
 @TableName("sys_notice")
@@ -24,7 +24,7 @@ public class SysNotice implements Serializable {
      * 公告ID.
      */
     @TableId
-    private Integer id;
+    private Integer noticeId;
 
     /**
      * 公告标题.
@@ -39,7 +39,7 @@ public class SysNotice implements Serializable {
     /**
      * 公告内容.
      */
-    private unknowType noticeContent;
+    private String noticeContent;
 
     /**
      * 公告状态（0正常 1关闭）.

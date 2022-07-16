@@ -24,7 +24,7 @@ import java.util.Set;
  * 代码生成业务表字.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:08
+ * @date 2022-07-11 21:53:59
  */
 @Api(tags = "代码生成业务表字")
 @RestController
@@ -33,20 +33,6 @@ public class GenTableColumnController {
 
     @Resource
     private GenTableColumnService genTableColumnService;
-
-//    /**
-//     * 分页查询代码生成业务表字.
-//     *
-//     * @param queryVo              查询对象实体
-//     * @return page
-//     */
-//    @GetMapping("/page")
-//    @ApiOperation(value = "分页查询代码生成业务表字", notes = "分页查询代码生成业务表字", produces = "application/json")
-//    public Result<PageInfo<GenTableColumnPageDto>, Object> page(@ApiParam("查询参数") GenTableColumnQueryVo queryVo) {
-//
-//        PageInfo<GenTableColumnPageDto> pageInfo = this.genTableColumnService.queryPageByWrapper(queryVo);
-//        return Result.success(pageInfo);
-//    }
 
     /**
      * 新增代码生成业务表字.
@@ -59,7 +45,7 @@ public class GenTableColumnController {
     public ResultObj add(@ApiParam("新增参数") @Valid @RequestBody GenTableColumnAddVo addVo) {
 
         this.genTableColumnService.insert(addVo);
-        return ResultObj.ok();
+        return ResultObj.ok("新增代码生成业务表字成功");
     }
 
     /**
@@ -73,7 +59,7 @@ public class GenTableColumnController {
     public ResultObj update(@ApiParam("修改参数") @Valid @RequestBody GenTableColumnUptVo updateVo) {
 
         this.genTableColumnService.update(updateVo);
-        return ResultObj.ok();
+        return ResultObj.ok("修改代码生成业务表字成功");
     }
 
     /**
@@ -88,21 +74,21 @@ public class GenTableColumnController {
 
         // 通过主键批量删除数据
         this.genTableColumnService.batchDel(pks);
-        return ResultObj.ok();
+        return ResultObj.ok("批量删除成功");
     }
 
     /**
     * 查看代码生成业务表字.
     *
-    * @param id 主键
+    * @param columnId 主键
     * @return 详情信息
     */
-    @GetMapping("/{id}")
-    @ApiOperation(value = "根据id主键查看数据", notes = "根据id主键查看数据", produces = "application/json")
-    public ResultObj getDetail(@PathVariable(value = "id") Long id) {
+    @GetMapping("/{columnId}")
+    @ApiOperation(value = "根据columnId主键查看数据", notes = "根据columnId主键查看数据", produces = "application/json")
+    public ResultObj getDetail(@PathVariable(value = "columnId") Long columnId) {
 
         // 通过主键查看数据
-        GenTableColumnDto dto = this.genTableColumnService.getDetail(id);
+        GenTableColumnDto dto = this.genTableColumnService.getDetail(columnId);
         return ResultObj.ok().setData(dto);
     }
 

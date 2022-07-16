@@ -7,7 +7,7 @@ import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.beans.BeanUtils;
 
 /**
- * 用于转换
+ * 用于转换.
  * @author Mubai
  * @date 2022/7/3 9:01 下午
  **/
@@ -21,7 +21,7 @@ public class TransformResult {
      * @param <T> 类型
      * @return 集合
      */
-    public static <T> List<T> entitysToDtos(List<?> list, Class<T> clazz) {
+    public static <T> List<T> entitysToDtos(@NotNull List<?> list, @NotNull Class<T> clazz) {
 
         if (ObjectUtils.isNotEmpty(list)) {
             List<T> dos = new ArrayList<>(list.size());

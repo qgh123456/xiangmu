@@ -10,7 +10,7 @@ import lombok.Data;
  * 角色信息表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @ApiModel
 @Data
@@ -23,12 +23,6 @@ public class SysRoleDto implements Serializable {
      */
     @ApiModelProperty("角色ID")
     private Long roleId;
-
-    /**
-     * 编码.
-     */
-    @ApiModelProperty("编码")
-    private String code;
 
     /**
      * 角色名称.

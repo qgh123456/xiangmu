@@ -7,15 +7,14 @@ import com.atqgh.dto.SysDictTypeDto;
 import com.atqgh.dto.SysDictTypePageDto;
 import com.atqgh.entity.SysDictType;
 import java.util.Set;
-import java.util.List;
-//
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.springframework.lang.NonNull;
 
 /**
  * 字典类型表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 public interface SysDictTypeService extends IService<SysDictType> {
 
@@ -25,7 +24,7 @@ public interface SysDictTypeService extends IService<SysDictType> {
      * @param addVo 保存参数
      * @return 返回数据
      */
-    int insert(SysDictTypeAddVo addVo);
+    int insert(@NonNull SysDictTypeAddVo addVo);
 
     /**
      * 修改.
@@ -33,14 +32,14 @@ public interface SysDictTypeService extends IService<SysDictType> {
      * @param updateVo 修改参数
      * @return 返回数据
      */
-    int update(SysDictTypeUptVo updateVo);
+    int update(@NonNull SysDictTypeUptVo updateVo);
 
      /**
      * 根据主键批量删除数据.
      *
      * @param pks 主键
      */
-    void batchDel(Set<String> pks);
+    void batchDel(@NonNull Set<String> pks);
 
     /**
      * 根据主键查询.
@@ -48,7 +47,7 @@ public interface SysDictTypeService extends IService<SysDictType> {
      * @param dictType 主键
      * @return 返回集合数据
      */
-    SysDictTypeDto getDetail(String dictType);
+    SysDictTypeDto getDetail(@NonNull String dictType);
 
     /**
      * 分页查询.
@@ -56,6 +55,6 @@ public interface SysDictTypeService extends IService<SysDictType> {
      * @param queryVo 查询参数
      * @return 返回集合数据
      */
-//    PageInfo<SysDictTypePageDto> queryPageByWrapper(SysDictTypeQueryVo queryVo);
+//    PageInfo<SysDictTypePageDto> queryPageByWrapper(@NonNull SysDictTypeQueryVo queryVo);
 
 }

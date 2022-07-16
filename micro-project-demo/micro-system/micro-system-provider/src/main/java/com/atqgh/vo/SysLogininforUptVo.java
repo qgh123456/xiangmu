@@ -3,13 +3,14 @@ package com.atqgh.vo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
+import java.util.Date;
 import lombok.Data;
 import javax.validation.constraints.NotNull;
 
 /**
  * 系统访问记录.
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:53:59
  */
 @ApiModel
 @Data
@@ -19,7 +20,7 @@ public class SysLogininforUptVo implements Serializable {
 
     @ApiModelProperty("访问ID")
     @NotNull
-    private Long id;
+    private Long infoId;
 
     @ApiModelProperty("用户账号")
     private String userName;

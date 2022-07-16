@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
  * 用户信息表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:10
+ * @date 2022-07-11 21:54:00
  */
 @ApiModel
 @Data
@@ -19,11 +19,9 @@ public class SysUserAddVo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    /**
-     * 编码.
-     */
-    @ApiModelProperty("编码")
-    private String code;
+    @ApiModelProperty("用户ID")
+    @NotNull
+    private Long userId;
 
     @ApiModelProperty("部门ID")
     private Long deptId;

@@ -4,18 +4,23 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import lombok.Data;
+import javax.validation.constraints.NotNull;
 
 /**
  * 代码生成业务表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:08
+ * @date 2022-07-11 21:53:59
  */
 @ApiModel
 @Data
 public class GenTableAddVo implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
+    @ApiModelProperty("编号")
+    @NotNull
+    private Long tableId;
 
     @ApiModelProperty("表名称")
     private String tableName;

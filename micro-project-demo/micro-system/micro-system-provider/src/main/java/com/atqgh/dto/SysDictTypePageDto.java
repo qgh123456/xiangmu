@@ -10,7 +10,7 @@ import lombok.Data;
  * 字典类型表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @ApiModel
 @Data
@@ -22,7 +22,7 @@ public class SysDictTypePageDto implements Serializable {
      * 字典主键.
      */
     @ApiModelProperty("字典主键")
-    private Long id;
+    private Long dictId;
 
     /**
      * 字典名称.

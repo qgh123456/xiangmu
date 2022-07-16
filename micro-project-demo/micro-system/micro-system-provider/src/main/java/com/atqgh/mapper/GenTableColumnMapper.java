@@ -12,7 +12,7 @@ import org.springframework.beans.BeanUtils;
  * 代码生成业务表字段.
  * 
  * @author Mubai
- * @date 2022-07-03 15:31:08
+ * @date 2022-07-11 21:53:59
  */
 @Mapper
 public interface GenTableColumnMapper extends BaseMapper<GenTableColumn> {

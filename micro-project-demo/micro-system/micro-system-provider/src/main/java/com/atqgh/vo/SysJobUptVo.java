@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 /**
  * 定时任务调度表.
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:53:59
  */
 @ApiModel
 @Data
@@ -19,7 +19,7 @@ public class SysJobUptVo implements Serializable {
 
     @ApiModelProperty("任务ID")
     @NotNull
-    private Long id;
+    private Long jobId;
 
     @ApiModelProperty("任务名称")
     @NotNull

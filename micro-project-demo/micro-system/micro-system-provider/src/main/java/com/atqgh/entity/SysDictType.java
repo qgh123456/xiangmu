@@ -12,7 +12,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
  * 字典类型表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @Data
 @TableName("sys_dict_type")
@@ -23,7 +23,7 @@ public class SysDictType implements Serializable {
     /**
      * 字典主键.
      */
-    private Long id;
+    private Long dictId;
 
     /**
      * 字典名称.

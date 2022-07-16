@@ -10,7 +10,7 @@ import lombok.Data;
  * 通知公告表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:08
+ * @date 2022-07-11 21:54:00
  */
 @ApiModel
 @Data
@@ -22,7 +22,7 @@ public class SysNoticeDto implements Serializable {
      * 公告ID.
      */
     @ApiModelProperty("公告ID")
-    private Integer id;
+    private Integer noticeId;
 
     /**
      * 公告标题.
@@ -40,7 +40,7 @@ public class SysNoticeDto implements Serializable {
      * 公告内容.
      */
     @ApiModelProperty("公告内容")
-    private unknowType noticeContent;
+    private String noticeContent;
 
     /**
      * 公告状态（0正常 1关闭）.

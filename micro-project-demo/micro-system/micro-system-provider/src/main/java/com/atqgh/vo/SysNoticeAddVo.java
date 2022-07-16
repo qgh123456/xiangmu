@@ -10,13 +10,17 @@ import javax.validation.constraints.NotNull;
  * 通知公告表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:08
+ * @date 2022-07-11 21:54:00
  */
 @ApiModel
 @Data
 public class SysNoticeAddVo implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
+    @ApiModelProperty("公告ID")
+    @NotNull
+    private Integer noticeId;
 
     @ApiModelProperty("公告标题")
     @NotNull
@@ -27,7 +31,7 @@ public class SysNoticeAddVo implements Serializable {
     private String noticeType;
 
     @ApiModelProperty("公告内容")
-    private unknowType noticeContent;
+    private String noticeContent;
 
     @ApiModelProperty("公告状态（0正常 1关闭）")
     private String status;

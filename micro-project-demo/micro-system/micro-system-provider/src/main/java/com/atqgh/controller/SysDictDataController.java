@@ -14,11 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 import io.swagger.annotations.ApiParam;
-import com.atqgh.vo.SysDictDataQueryVo;
 import com.atqgh.vo.SysDictDataAddVo;
 import com.atqgh.vo.SysDictDataUptVo;
 import com.atqgh.dto.SysDictDataDto;
-import com.atqgh.dto.SysDictDataPageDto;
 import com.atqgh.service.SysDictDataService;
 import java.util.Set;
 
@@ -26,7 +24,7 @@ import java.util.Set;
  * 字典数据.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @Api(tags = "字典数据")
 @RestController
@@ -35,20 +33,6 @@ public class SysDictDataController {
 
     @Resource
     private SysDictDataService sysDictDataService;
-
-    /**
-     * 分页查询字典数据.
-     *
-     * @param queryVo              查询对象实体
-     * @return page
-     */
-//    @GetMapping("/page")
-//    @ApiOperation(value = "分页查询字典数据", notes = "分页查询字典数据", produces = "application/json")
-//    public Result<PageInfo<SysDictDataPageDto>, Object> page(@ApiParam("查询参数") SysDictDataQueryVo queryVo) {
-//
-//        PageInfo<SysDictDataPageDto> pageInfo = this.sysDictDataService.queryPageByWrapper(queryVo);
-//        return Result.success(pageInfo);
-//    }
 
     /**
      * 新增字典数据.
@@ -96,15 +80,15 @@ public class SysDictDataController {
     /**
     * 查看字典数据.
     *
-    * @param code 主键
+    * @param dictCode 主键
     * @return 详情信息
     */
-    @GetMapping("/{code}")
-    @ApiOperation(value = "根据code主键查看数据", notes = "根据code主键查看数据", produces = "application/json")
-    public ResultObj getDetail(@PathVariable(value = "code") Long code) {
+    @GetMapping("/{dictCode}")
+    @ApiOperation(value = "根据dictCode主键查看数据", notes = "根据dictCode主键查看数据", produces = "application/json")
+    public ResultObj getDetail(@PathVariable(value = "dictCode") Long dictCode) {
 
         // 通过主键查看数据
-        SysDictDataDto dto = this.sysDictDataService.getDetail(code);
+        SysDictDataDto dto = this.sysDictDataService.getDetail(dictCode);
         return ResultObj.ok().setData(dto);
     }
 

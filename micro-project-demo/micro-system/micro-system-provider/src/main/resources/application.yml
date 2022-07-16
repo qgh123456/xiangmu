@@ -26,13 +26,7 @@ mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 在控制台上打印日志
-
-# 鉴权配置
-security:
-  oauth2:
-    resource:
-      id: ${spring.application.name}
-      user-info-uri: http://localhost:4444/auth/user
+    map-underscore-to-camel-case: true
 
 # 开启资源权限配置
 micro:

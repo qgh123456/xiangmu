@@ -24,7 +24,7 @@ import java.util.Set;
  * 部门.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:10
+ * @date 2022-07-11 21:54:00
  */
 @Api(tags = "部门")
 @RestController
@@ -33,20 +33,6 @@ public class SysDeptController {
 
     @Resource
     private SysDeptService sysDeptService;
-
-//    /**
-//     * 分页查询部门.
-//     *
-//     * @param queryVo  查询对象实体
-//     * @return page
-//     */
-//    @GetMapping("/page")
-//    @ApiOperation(value = "分页查询部门", notes = "分页查询部门", produces = "application/json")
-//    public Result<PageInfo<SysDeptPageDto>, Object> page(@ApiParam("查询参数") SysDeptQueryVo queryVo) {
-//
-//        PageInfo<SysDeptPageDto> pageInfo = this.sysDeptService.queryPageByWrapper(queryVo);
-//        return Result.success(pageInfo);
-//    }
 
     /**
      * 新增部门.

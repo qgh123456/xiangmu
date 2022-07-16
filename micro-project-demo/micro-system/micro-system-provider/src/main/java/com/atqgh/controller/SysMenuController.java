@@ -14,11 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 import io.swagger.annotations.ApiParam;
-import com.atqgh.vo.SysMenuQueryVo;
 import com.atqgh.vo.SysMenuAddVo;
 import com.atqgh.vo.SysMenuUptVo;
 import com.atqgh.dto.SysMenuDto;
-import com.atqgh.dto.SysMenuPageDto;
 import com.atqgh.service.SysMenuService;
 import java.util.Set;
 
@@ -26,7 +24,7 @@ import java.util.Set;
  * 菜单权限.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @Api(tags = "菜单权限")
 @RestController
@@ -35,20 +33,6 @@ public class SysMenuController {
 
     @Resource
     private SysMenuService sysMenuService;
-
-    /**
-     * 分页查询菜单权限.
-     *
-     * @param queryVo              查询对象实体
-     * @return page
-     */
-//    @GetMapping("/page")
-//    @ApiOperation(value = "分页查询菜单权限", notes = "分页查询菜单权限", produces = "application/json")
-//    public Result<PageInfo<SysMenuPageDto>, Object> page(@ApiParam("查询参数") SysMenuQueryVo queryVo) {
-//
-//        PageInfo<SysMenuPageDto> pageInfo = this.sysMenuService.queryPageByWrapper(queryVo);
-//        return Result.success(pageInfo);
-//    }
 
     /**
      * 新增菜单权限.
@@ -96,15 +80,15 @@ public class SysMenuController {
     /**
     * 查看菜单权限.
     *
-    * @param id 主键
+    * @param menuId 主键
     * @return 详情信息
     */
-    @GetMapping("/{id}")
-    @ApiOperation(value = "根据id主键查看数据", notes = "根据id主键查看数据", produces = "application/json")
-    public ResultObj getDetail(@PathVariable(value = "id") Long id) {
+    @GetMapping("/{menuId}")
+    @ApiOperation(value = "根据menuId主键查看数据", notes = "根据menuId主键查看数据", produces = "application/json")
+    public ResultObj getDetail(@PathVariable(value = "menuId") Long menuId) {
 
         // 通过主键查看数据
-        SysMenuDto dto = this.sysMenuService.getDetail(id);
+        SysMenuDto dto = this.sysMenuService.getDetail(menuId);
         return ResultObj.ok().setData(dto);
     }
 

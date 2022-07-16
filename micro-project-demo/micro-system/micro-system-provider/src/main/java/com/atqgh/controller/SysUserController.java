@@ -1,7 +1,6 @@
 package com.atqgh.controller;
 
 import com.atqgh.common.utils.ResultObj;
-import com.atqgh.system.dto.SysUserDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import javax.annotation.Resource;
@@ -17,6 +16,7 @@ import javax.validation.Valid;
 import io.swagger.annotations.ApiParam;
 import com.atqgh.vo.SysUserAddVo;
 import com.atqgh.vo.SysUserUptVo;
+import com.atqgh.dto.SysUserDto;
 import com.atqgh.service.SysUserService;
 import java.util.Set;
 
@@ -24,7 +24,7 @@ import java.util.Set;
  * 用户信息.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:10
+ * @date 2022-07-11 21:54:00
  */
 @Api(tags = "用户信息")
 @RestController
@@ -33,20 +33,6 @@ public class SysUserController {
 
     @Resource
     private SysUserService sysUserService;
-
-    /**
-     * 分页查询用户信息.
-     *
-     * @param queryVo              查询对象实体
-     * @return page
-     */
-//    @GetMapping("/page")
-//    @ApiOperation(value = "分页查询用户信息", notes = "分页查询用户信息", produces = "application/json")
-//    public ResultObj page(@ApiParam("查询参数") SysUserQueryVo queryVo) {
-//
-//        PageInfo<SysUserPageDto> pageInfo = this.sysUserService.queryPageByWrapper(queryVo);
-//        return Result.success(pageInfo);
-//    }
 
     /**
      * 新增用户信息.
@@ -103,21 +89,6 @@ public class SysUserController {
 
         // 通过主键查看数据
         SysUserDto dto = this.sysUserService.getDetail(userId);
-        return ResultObj.ok().setData(dto);
-    }
-
-    /**
-    * 查看用户信息.
-    *
-    * @param username 用户名字
-    * @return 详情信息
-    */
-    @GetMapping("/findByUsername/{username}")
-    @ApiOperation(value = "根据userId主键查看数据", notes = "根据userId主键查看数据", produces = "application/json")
-    public ResultObj findByUsername(@PathVariable(value = "username") String username) {
-
-        // 通过主键查看数据
-        SysUserDto dto = this.sysUserService.findByUsername(username);
         return ResultObj.ok().setData(dto);
     }
 

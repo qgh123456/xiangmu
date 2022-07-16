@@ -26,7 +26,7 @@ import java.util.Set;
  * 字典类型.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @Api(tags = "字典类型")
 @RestController
@@ -35,20 +35,6 @@ public class SysDictTypeController {
 
     @Resource
     private SysDictTypeService sysDictTypeService;
-
-    /**
-     * 分页查询字典类型.
-     *
-     * @param queryVo              查询对象实体
-     * @return page
-     */
-//    @GetMapping("/page")
-//    @ApiOperation(value = "分页查询字典类型", notes = "分页查询字典类型", produces = "application/json")
-//    public Result<PageInfo<SysDictTypePageDto>, Object> page(@ApiParam("查询参数") SysDictTypeQueryVo queryVo) {
-//
-//        PageInfo<SysDictTypePageDto> pageInfo = this.sysDictTypeService.queryPageByWrapper(queryVo);
-//        return Result.success(pageInfo);
-//    }
 
     /**
      * 新增字典类型.

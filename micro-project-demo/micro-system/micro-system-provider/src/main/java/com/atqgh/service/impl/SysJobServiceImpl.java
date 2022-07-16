@@ -1,28 +1,24 @@
 package com.atqgh.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import javax.annotation.Resource;
-import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.stereotype.Service;
 import com.atqgh.mapper.SysJobMapper;
 import com.atqgh.entity.SysJob;
 import com.atqgh.service.SysJobService;
-import com.atqgh.vo.SysJobQueryVo;
 import com.atqgh.vo.SysJobAddVo;
 import com.atqgh.vo.SysJobUptVo;
 import com.atqgh.dto.SysJobDto;
-import com.atqgh.dto.SysJobPageDto;
 import java.util.Set;
-import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.lang.NonNull;
 
 /**
  * 定时任务调度表 业务逻辑.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:53:59
  */
 @Slf4j
 @Service("sysJobService")
@@ -32,7 +28,7 @@ public class SysJobServiceImpl extends ServiceImpl<SysJobMapper, SysJob> impleme
     private SysJobMapper sysJobMapper;
 
     @Override
-    public int insert(SysJobAddVo addVo) {
+    public int insert(@NonNull SysJobAddVo addVo) {
 
         SysJob addEntity = new SysJob();
         BeanUtils.copyProperties(addVo, addEntity);
@@ -40,7 +36,7 @@ public class SysJobServiceImpl extends ServiceImpl<SysJobMapper, SysJob> impleme
     }
 
     @Override
-    public int update(SysJobUptVo updateVo) {
+    public int update(@NonNull SysJobUptVo updateVo) {
 
         SysJob uptEntity = new SysJob();
         BeanUtils.copyProperties(updateVo, uptEntity);
@@ -49,31 +45,18 @@ public class SysJobServiceImpl extends ServiceImpl<SysJobMapper, SysJob> impleme
     }
 
     @Override
-    public void batchDel(Set<Long> pks) {
+    public void batchDel(@NonNull Set<Long> pks) {
 
         this.baseMapper.deleteBatchIds(pks);
     }
 
     @Override
-    public SysJobDto getDetail(Long id) {
+    public SysJobDto getDetail(@NonNull Long jobId) {
 
-        SysJob entity = this.baseMapper.selectById(id);
+        SysJob entity = this.baseMapper.selectById(jobId);
         SysJobDto dto = new SysJobDto();
         BeanUtils.copyProperties(entity, dto);
         return dto;
     }
-
-//    @Override
-//    public PageInfo<SysJobPageDto> queryPageByWrapper(SysJobQueryVo queryVo) {
-//
-//        // 设置分页
-//        WebUtils.startPage();
-//        // 构建查询条件
-//        LambdaQueryWrapper<SysJob> queryWrapper = this.sysJobMapper.buildQueryPageWrapper(queryVo);
-//        // 根据提交查询
-//        List<SysJob> list = this.baseMapper.selectList(queryWrapper);
-//        // 根据条件获取总数
-//        return new PageInfo<>(CollectPropertiesCopyUtils.entityToDto(list, SysJobPageDto.class));
-//    }
 
 }

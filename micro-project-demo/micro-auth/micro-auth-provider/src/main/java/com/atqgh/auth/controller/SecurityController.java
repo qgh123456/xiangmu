@@ -1,5 +1,6 @@
 package com.atqgh.auth.controller;
 
+import com.atqgh.common.enums.ResultCodeEnum;
 import com.atqgh.common.exception.MicroAuthException;
 import com.atqgh.common.utils.ResultObj;
 import java.security.Principal;
@@ -33,7 +34,7 @@ public class SecurityController {
         String authorization = request.getHeader("Authorization");
         String token = StringUtils.replace(authorization, "bearer ", "");
         if (!consumerTokenServices.revokeToken(token)) {
-            throw new MicroAuthException("退出登录失败");
+            throw new MicroAuthException(ResultCodeEnum.BUSINESS_REQUEST_FAILED.getCode(), "退出登录失败");
         }
         return ResultObj.ok("退出登录成功");
     }

@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 
 /**
+ * web工具类.
  * @author Mubai
  * @date 2022/6/30 5:55 下午
  **/
@@ -13,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 public class WebUtil {
 
     /**
-     * 设置响应
+     * 设置响应.
      *
      * @param response    HttpServletResponse
      * @param contentType content-type

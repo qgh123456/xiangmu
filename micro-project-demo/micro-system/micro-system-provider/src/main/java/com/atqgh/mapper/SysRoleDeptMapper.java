@@ -12,7 +12,7 @@ import org.springframework.beans.BeanUtils;
  * 角色和部门关联表.
  * 
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @Mapper
 public interface SysRoleDeptMapper extends BaseMapper<SysRoleDept> {

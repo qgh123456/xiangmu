@@ -3,13 +3,14 @@ package com.atqgh.entity;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
+import java.util.Date;
 import lombok.Data;
 
 /**
  * 系统访问记录.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:53:59
  */
 @Data
 @TableName("sys_logininfor")
@@ -21,7 +22,7 @@ public class SysLogininfor implements Serializable {
      * 访问ID.
      */
     @TableId
-    private Long id;
+    private Long infoId;
 
     /**
      * 用户账号.

@@ -14,11 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 import io.swagger.annotations.ApiParam;
-import com.atqgh.vo.SysRoleQueryVo;
 import com.atqgh.vo.SysRoleAddVo;
 import com.atqgh.vo.SysRoleUptVo;
 import com.atqgh.dto.SysRoleDto;
-import com.atqgh.dto.SysRolePageDto;
 import com.atqgh.service.SysRoleService;
 import java.util.Set;
 
@@ -26,7 +24,7 @@ import java.util.Set;
  * 角色信息.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @Api(tags = "角色信息")
 @RestController
@@ -35,20 +33,6 @@ public class SysRoleController {
 
     @Resource
     private SysRoleService sysRoleService;
-
-    /**
-     * 分页查询角色信息.
-     *
-     * @param queryVo              查询对象实体
-     * @return page
-     */
-//    @GetMapping("/page")
-//    @ApiOperation(value = "分页查询角色信息", notes = "分页查询角色信息", produces = "application/json")
-//    public Result<PageInfo<SysRolePageDto>, Object> page(@ApiParam("查询参数") SysRoleQueryVo queryVo) {
-//
-//        PageInfo<SysRolePageDto> pageInfo = this.sysRoleService.queryPageByWrapper(queryVo);
-//        return Result.success(pageInfo);
-//    }
 
     /**
      * 新增角色信息.

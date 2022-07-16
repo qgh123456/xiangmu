@@ -14,11 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 import io.swagger.annotations.ApiParam;
-import com.atqgh.vo.SysUserPostQueryVo;
 import com.atqgh.vo.SysUserPostAddVo;
 import com.atqgh.vo.SysUserPostUptVo;
 import com.atqgh.dto.SysUserPostDto;
-import com.atqgh.dto.SysUserPostPageDto;
 import com.atqgh.service.SysUserPostService;
 import java.util.Set;
 
@@ -26,7 +24,7 @@ import java.util.Set;
  * 用户与岗位关联.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @Api(tags = "用户与岗位关联")
 @RestController
@@ -35,20 +33,6 @@ public class SysUserPostController {
 
     @Resource
     private SysUserPostService sysUserPostService;
-
-    /**
-     * 分页查询用户与岗位关联.
-     *
-     * @param queryVo              查询对象实体
-     * @return page
-     */
-//    @GetMapping("/page")
-//    @ApiOperation(value = "分页查询用户与岗位关联", notes = "分页查询用户与岗位关联", produces = "application/json")
-//    public Result<PageInfo<SysUserPostPageDto>, Object> page(@ApiParam("查询参数") SysUserPostQueryVo queryVo) {
-//
-//        PageInfo<SysUserPostPageDto> pageInfo = this.sysUserPostService.queryPageByWrapper(queryVo);
-//        return Result.success(pageInfo);
-//    }
 
     /**
      * 新增用户与岗位关联.
@@ -86,7 +70,7 @@ public class SysUserPostController {
      */
     @DeleteMapping("/batchDel/{pks}")
     @ApiOperation(value = "根据用户与岗位关联主键批量删除数据", notes = "根据用户与岗位关联主键批量删除数据", produces = "application/json")
-    public ResultObj batchDel(@ApiParam("主键") @PathVariable(value = "pks") Set<String> pks) {
+    public ResultObj batchDel(@ApiParam("主键") @PathVariable(value = "pks") Set<Long> pks) {
 
         // 通过主键批量删除数据
         this.sysUserPostService.batchDel(pks);
@@ -96,15 +80,15 @@ public class SysUserPostController {
     /**
     * 查看用户与岗位关联.
     *
-    * @param userCode 主键
+    * @param userId 主键
     * @return 详情信息
     */
-    @GetMapping("/{userCode}")
-    @ApiOperation(value = "根据userCode主键查看数据", notes = "根据userCode主键查看数据", produces = "application/json")
-    public ResultObj getDetail(@PathVariable(value = "userCode") String userCode) {
+    @GetMapping("/{userId}")
+    @ApiOperation(value = "根据userId主键查看数据", notes = "根据userId主键查看数据", produces = "application/json")
+    public ResultObj getDetail(@PathVariable(value = "userId") Long userId) {
 
         // 通过主键查看数据
-        SysUserPostDto dto = this.sysUserPostService.getDetail(userCode);
+        SysUserPostDto dto = this.sysUserPostService.getDetail(userId);
         return ResultObj.ok().setData(dto);
     }
 

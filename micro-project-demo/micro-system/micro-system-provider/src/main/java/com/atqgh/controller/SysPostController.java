@@ -4,7 +4,6 @@ import com.atqgh.common.utils.ResultObj;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import javax.annotation.Resource;
-import javax.xml.transform.Result;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,11 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 import io.swagger.annotations.ApiParam;
-import com.atqgh.vo.SysPostQueryVo;
 import com.atqgh.vo.SysPostAddVo;
 import com.atqgh.vo.SysPostUptVo;
 import com.atqgh.dto.SysPostDto;
-import com.atqgh.dto.SysPostPageDto;
 import com.atqgh.service.SysPostService;
 import java.util.Set;
 
@@ -27,7 +24,7 @@ import java.util.Set;
  * 岗位信息.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:10
+ * @date 2022-07-11 21:54:00
  */
 @Api(tags = "岗位信息")
 @RestController
@@ -36,20 +33,6 @@ public class SysPostController {
 
     @Resource
     private SysPostService sysPostService;
-
-    /**
-     * 分页查询岗位信息.
-     *
-     * @param queryVo              查询对象实体
-     * @return page
-     */
-//    @GetMapping("/page")
-//    @ApiOperation(value = "分页查询岗位信息", notes = "分页查询岗位信息", produces = "application/json")
-//    public Result<PageInfo<SysPostPageDto>, Object> page(@ApiParam("查询参数") SysPostQueryVo queryVo) {
-//
-//        PageInfo<SysPostPageDto> pageInfo = this.sysPostService.queryPageByWrapper(queryVo);
-//        return Result.success(pageInfo);
-//    }
 
     /**
      * 新增岗位信息.

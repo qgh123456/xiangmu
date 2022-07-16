@@ -10,7 +10,7 @@ import lombok.Data;
  * 字典数据表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @ApiModel
 @Data
@@ -22,7 +22,7 @@ public class SysDictDataQueryVo implements Serializable {
      * 字典编码.
      */
     @ApiModelProperty("字典编码")
-    private Long code;
+    private Long dictCode;
 
     /**
      * 字典排序.

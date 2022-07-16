@@ -93,4 +93,27 @@
         remark AS remark
     </sql>
 
+    <select id="getRolesByUserCode" resultType="com.atqgh.dto.SysRoleDto">
+
+        select
+            sur.role_id,
+            sur.role_name,
+            sur.role_key,
+            sur.role_sort,
+            sur.data_scope,
+            sur.menu_check_strictly,
+            sur.dept_check_strictly,
+            sur.status,
+            sur.del_flag,
+            sur.create_by,
+            sur.create_time,
+            sur.update_by,
+            sur.update_time,
+            sur.remark
+        from sys_user_role sur
+        inner join sys_role sr
+        on sur.role_code  = sr.code
+        where sur.user_code = #{userCode}
+    </select>
+
 </mapper>

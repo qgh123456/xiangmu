@@ -10,7 +10,7 @@ import lombok.Data;
  * 系统访问记录.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:53:59
  */
 @ApiModel
 @Data
@@ -22,7 +22,7 @@ public class SysLogininforPageDto implements Serializable {
      * 访问ID.
      */
     @ApiModelProperty("访问ID")
-    private Long id;
+    private Long infoId;
 
     /**
      * 用户账号.

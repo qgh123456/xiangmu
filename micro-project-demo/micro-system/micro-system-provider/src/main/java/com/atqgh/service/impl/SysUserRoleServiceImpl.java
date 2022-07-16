@@ -1,81 +1,82 @@
 package com.atqgh.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
-import javax.annotation.Resource;
-import org.apache.commons.lang3.ObjectUtils;
-
-import org.springframework.stereotype.Service;
-
-import com.atqgh.mapper.SysUserRoleMapper;
+import com.atqgh.dto.SysUserRoleDto;
 import com.atqgh.entity.SysUserRole;
 import com.atqgh.service.SysUserRoleService;
-import com.atqgh.vo.SysUserRoleQueryVo;
 import com.atqgh.vo.SysUserRoleAddVo;
 import com.atqgh.vo.SysUserRoleUptVo;
-import com.atqgh.dto.SysUserRoleDto;
-import com.atqgh.dto.SysUserRolePageDto;
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import java.util.Collection;
+import java.util.Map;
 import java.util.Set;
-import java.util.List;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.BeanUtils;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import java.util.function.Function;
+import org.springframework.stereotype.Service;
 
 /**
- * 用户和角色关联表 业务逻辑.
- *
+ * 用户角色关联.
  * @author Mubai
- * @date 2022-07-03 15:31:09
- */
-@Slf4j
-@Service("sysUserRoleService")
-public class SysUserRoleServiceImpl extends ServiceImpl<SysUserRoleMapper, SysUserRole> implements SysUserRoleService {
-
-    @Resource
-    private SysUserRoleMapper sysUserRoleMapper;
-
+ * @date 2022/7/16 9:06 上午
+ **/
+@Service
+public class SysUserRoleServiceImpl implements SysUserRoleService {
     @Override
     public int insert(SysUserRoleAddVo addVo) {
-
-        SysUserRole addEntity = new SysUserRole();
-        BeanUtils.copyProperties(addVo, addEntity);
-        return this.baseMapper.insert(addEntity);
+        return 0;
     }
 
     @Override
     public int update(SysUserRoleUptVo updateVo) {
-
-        SysUserRole uptEntity = new SysUserRole();
-        BeanUtils.copyProperties(updateVo, uptEntity);
-        int count = this.baseMapper.updateById(uptEntity);
-        return count;
+        return 0;
     }
 
     @Override
-    public void batchDel(Set<String> pks) {
+    public void batchDel(Set<Long> pks) {
 
-        this.baseMapper.deleteBatchIds(pks);
     }
 
     @Override
-    public SysUserRoleDto getDetail(String userCode) {
-
-        SysUserRole entity = this.baseMapper.selectById(userCode);
-        SysUserRoleDto dto = new SysUserRoleDto();
-        BeanUtils.copyProperties(entity, dto);
-        return dto;
+    public SysUserRoleDto getDetail(Long userId) {
+        return null;
     }
 
-//    @Override
-//    public PageInfo<SysUserRolePageDto> queryPageByWrapper(SysUserRoleQueryVo queryVo) {
-//
-//        // 设置分页
-//        WebUtils.startPage();
-//        // 构建查询条件
-//        LambdaQueryWrapper<SysUserRole> queryWrapper = this.sysUserRoleMapper.buildQueryPageWrapper(queryVo);
-//        // 根据提交查询
-//        List<SysUserRole> list = this.baseMapper.selectList(queryWrapper);
-//        // 根据条件获取总数
-//        return new PageInfo<>(CollectPropertiesCopyUtils.entityToDto(list, SysUserRolePageDto.class));
-//    }
+    @Override
+    public boolean saveBatch(Collection<SysUserRole> entityList, int batchSize) {
+        return false;
+    }
 
+    @Override
+    public boolean saveOrUpdateBatch(Collection<SysUserRole> entityList, int batchSize) {
+        return false;
+    }
+
+    @Override
+    public boolean updateBatchById(Collection<SysUserRole> entityList, int batchSize) {
+        return false;
+    }
+
+    @Override
+    public boolean saveOrUpdate(SysUserRole entity) {
+        return false;
+    }
+
+    @Override
+    public SysUserRole getOne(Wrapper<SysUserRole> queryWrapper, boolean throwEx) {
+        return null;
+    }
+
+    @Override
+    public Map<String, Object> getMap(Wrapper<SysUserRole> queryWrapper) {
+        return null;
+    }
+
+    @Override
+    public <V> V getObj(Wrapper<SysUserRole> queryWrapper, Function<? super Object, V> mapper) {
+        return null;
+    }
+
+    @Override
+    public BaseMapper<SysUserRole> getBaseMapper() {
+        return null;
+    }
 }

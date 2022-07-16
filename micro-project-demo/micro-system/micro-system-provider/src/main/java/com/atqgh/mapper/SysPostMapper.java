@@ -12,7 +12,7 @@ import org.springframework.beans.BeanUtils;
  * 岗位信息表.
  * 
  * @author Mubai
- * @date 2022-07-03 15:31:10
+ * @date 2022-07-11 21:54:00
  */
 @Mapper
 public interface SysPostMapper extends BaseMapper<SysPost> {

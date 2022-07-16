@@ -24,7 +24,7 @@ import java.util.Set;
  * 参数配置.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:53:59
  */
 @Api(tags = "参数配置")
 @RestController
@@ -33,20 +33,6 @@ public class SysConfigController {
 
     @Resource
     private SysConfigService sysConfigService;
-
-//    /**
-//     * 分页查询参数配置.
-//     *
-//     * @param queryVo              查询对象实体
-//     * @return page
-//     */
-//    @GetMapping("/page")
-//    @ApiOperation(value = "分页查询参数配置", notes = "分页查询参数配置", produces = "application/json")
-//    public Result<PageInfo<SysConfigPageDto>, Object> page(@ApiParam("查询参数") SysConfigQueryVo queryVo) {
-//
-//        PageInfo<SysConfigPageDto> pageInfo = this.sysConfigService.queryPageByWrapper(queryVo);
-//        return Result.success(pageInfo);
-//    }
 
     /**
      * 新增参数配置.
@@ -94,15 +80,15 @@ public class SysConfigController {
     /**
     * 查看参数配置.
     *
-    * @param id 主键
+    * @param configId 主键
     * @return 详情信息
     */
-    @GetMapping("/{id}")
-    @ApiOperation(value = "根据id主键查看数据", notes = "根据id主键查看数据", produces = "application/json")
-    public ResultObj getDetail(@PathVariable(value = "id") Integer id) {
+    @GetMapping("/{configId}")
+    @ApiOperation(value = "根据configId主键查看数据", notes = "根据configId主键查看数据", produces = "application/json")
+    public ResultObj getDetail(@PathVariable(value = "configId") Integer configId) {
 
         // 通过主键查看数据
-        SysConfigDto dto = this.sysConfigService.getDetail(id);
+        SysConfigDto dto = this.sysConfigService.getDetail(configId);
         return ResultObj.ok().setData(dto);
     }
 

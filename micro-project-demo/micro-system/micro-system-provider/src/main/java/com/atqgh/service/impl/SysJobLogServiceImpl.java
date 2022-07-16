@@ -1,8 +1,6 @@
 package com.atqgh.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import javax.annotation.Resource;
-import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.stereotype.Service;
 import com.atqgh.mapper.SysJobLogMapper;
 import com.atqgh.entity.SysJobLog;
@@ -17,12 +15,13 @@ import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.lang.NonNull;
 
 /**
  * 定时任务调度日志表 业务逻辑.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:08
+ * @date 2022-07-11 21:53:59
  */
 @Slf4j
 @Service("sysJobLogService")
@@ -32,7 +31,7 @@ public class SysJobLogServiceImpl extends ServiceImpl<SysJobLogMapper, SysJobLog
     private SysJobLogMapper sysJobLogMapper;
 
     @Override
-    public int insert(SysJobLogAddVo addVo) {
+    public int insert(@NonNull SysJobLogAddVo addVo) {
 
         SysJobLog addEntity = new SysJobLog();
         BeanUtils.copyProperties(addVo, addEntity);
@@ -40,7 +39,7 @@ public class SysJobLogServiceImpl extends ServiceImpl<SysJobLogMapper, SysJobLog
     }
 
     @Override
-    public int update(SysJobLogUptVo updateVo) {
+    public int update(@NonNull SysJobLogUptVo updateVo) {
 
         SysJobLog uptEntity = new SysJobLog();
         BeanUtils.copyProperties(updateVo, uptEntity);
@@ -49,31 +48,18 @@ public class SysJobLogServiceImpl extends ServiceImpl<SysJobLogMapper, SysJobLog
     }
 
     @Override
-    public void batchDel(Set<Long> pks) {
+    public void batchDel(@NonNull Set<Long> pks) {
 
         this.baseMapper.deleteBatchIds(pks);
     }
 
     @Override
-    public SysJobLogDto getDetail(Long id) {
+    public SysJobLogDto getDetail(@NonNull Long jobLogId) {
 
-        SysJobLog entity = this.baseMapper.selectById(id);
+        SysJobLog entity = this.baseMapper.selectById(jobLogId);
         SysJobLogDto dto = new SysJobLogDto();
         BeanUtils.copyProperties(entity, dto);
         return dto;
     }
-
-//    @Override
-//    public PageInfo<SysJobLogPageDto> queryPageByWrapper(SysJobLogQueryVo queryVo) {
-//
-//        // 设置分页
-//        WebUtils.startPage();
-//        // 构建查询条件
-//        LambdaQueryWrapper<SysJobLog> queryWrapper = this.sysJobLogMapper.buildQueryPageWrapper(queryVo);
-//        // 根据提交查询
-//        List<SysJobLog> list = this.baseMapper.selectList(queryWrapper);
-//        // 根据条件获取总数
-//        return new PageInfo<>(CollectPropertiesCopyUtils.entityToDto(list, SysJobLogPageDto.class));
-//    }
 
 }

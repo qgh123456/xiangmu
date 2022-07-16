@@ -12,7 +12,7 @@ import org.springframework.beans.BeanUtils;
  * 参数配置表.
  * 
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:53:59
  */
 @Mapper
 public interface SysConfigMapper extends BaseMapper<SysConfig> {

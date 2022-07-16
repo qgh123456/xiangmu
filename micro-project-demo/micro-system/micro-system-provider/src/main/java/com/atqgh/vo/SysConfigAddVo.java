@@ -4,18 +4,23 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import lombok.Data;
+import javax.validation.constraints.NotNull;
 
 /**
  * 参数配置表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:53:59
  */
 @ApiModel
 @Data
 public class SysConfigAddVo implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
+    @ApiModelProperty("参数主键")
+    @NotNull
+    private Integer configId;
 
     @ApiModelProperty("参数名称")
     private String configName;

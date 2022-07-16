@@ -12,7 +12,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
  * 参数配置表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:53:59
  */
 @Data
 @TableName("sys_config")
@@ -24,7 +24,7 @@ public class SysConfig implements Serializable {
      * 参数主键.
      */
     @TableId
-    private Integer id;
+    private Integer configId;
 
     /**
      * 参数名称.

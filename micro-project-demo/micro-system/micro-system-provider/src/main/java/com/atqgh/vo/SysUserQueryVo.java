@@ -10,7 +10,7 @@ import lombok.Data;
  * 用户信息表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:10
+ * @date 2022-07-11 21:54:00
  */
 @ApiModel
 @Data
@@ -23,12 +23,6 @@ public class SysUserQueryVo implements Serializable {
      */
     @ApiModelProperty("用户ID")
     private Long userId;
-
-    /**
-     * 编码.
-     */
-    @ApiModelProperty("编码")
-    private String code;
 
     /**
      * 部门ID.

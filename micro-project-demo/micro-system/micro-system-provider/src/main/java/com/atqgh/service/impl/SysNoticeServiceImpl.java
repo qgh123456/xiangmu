@@ -1,30 +1,24 @@
 package com.atqgh.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import javax.annotation.Resource;
-import org.apache.commons.lang3.ObjectUtils;
-
 import org.springframework.stereotype.Service;
-
 import com.atqgh.mapper.SysNoticeMapper;
 import com.atqgh.entity.SysNotice;
 import com.atqgh.service.SysNoticeService;
-import com.atqgh.vo.SysNoticeQueryVo;
 import com.atqgh.vo.SysNoticeAddVo;
 import com.atqgh.vo.SysNoticeUptVo;
 import com.atqgh.dto.SysNoticeDto;
-import com.atqgh.dto.SysNoticePageDto;
 import java.util.Set;
-import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.lang.NonNull;
 
 /**
  * 通知公告表 业务逻辑.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:08
+ * @date 2022-07-11 21:54:00
  */
 @Slf4j
 @Service("sysNoticeService")
@@ -34,7 +28,7 @@ public class SysNoticeServiceImpl extends ServiceImpl<SysNoticeMapper, SysNotice
     private SysNoticeMapper sysNoticeMapper;
 
     @Override
-    public int insert(SysNoticeAddVo addVo) {
+    public int insert(@NonNull SysNoticeAddVo addVo) {
 
         SysNotice addEntity = new SysNotice();
         BeanUtils.copyProperties(addVo, addEntity);
@@ -42,7 +36,7 @@ public class SysNoticeServiceImpl extends ServiceImpl<SysNoticeMapper, SysNotice
     }
 
     @Override
-    public int update(SysNoticeUptVo updateVo) {
+    public int update(@NonNull SysNoticeUptVo updateVo) {
 
         SysNotice uptEntity = new SysNotice();
         BeanUtils.copyProperties(updateVo, uptEntity);
@@ -51,31 +45,18 @@ public class SysNoticeServiceImpl extends ServiceImpl<SysNoticeMapper, SysNotice
     }
 
     @Override
-    public void batchDel(Set<Integer> pks) {
+    public void batchDel(@NonNull Set<Integer> pks) {
 
         this.baseMapper.deleteBatchIds(pks);
     }
 
     @Override
-    public SysNoticeDto getDetail(Integer id) {
+    public SysNoticeDto getDetail(@NonNull Integer noticeId) {
 
-        SysNotice entity = this.baseMapper.selectById(id);
+        SysNotice entity = this.baseMapper.selectById(noticeId);
         SysNoticeDto dto = new SysNoticeDto();
         BeanUtils.copyProperties(entity, dto);
         return dto;
     }
-
-//    @Override
-//    public PageInfo<SysNoticePageDto> queryPageByWrapper(SysNoticeQueryVo queryVo) {
-//
-//        // 设置分页
-//        WebUtils.startPage();
-//        // 构建查询条件
-//        LambdaQueryWrapper<SysNotice> queryWrapper = this.sysNoticeMapper.buildQueryPageWrapper(queryVo);
-//        // 根据提交查询
-//        List<SysNotice> list = this.baseMapper.selectList(queryWrapper);
-//        // 根据条件获取总数
-//        return new PageInfo<>(CollectPropertiesCopyUtils.entityToDto(list, SysNoticePageDto.class));
-//    }
 
 }

@@ -4,18 +4,23 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import lombok.Data;
+import javax.validation.constraints.NotNull;
 
 /**
  * 字典类型表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @ApiModel
 @Data
 public class SysDictTypeAddVo implements Serializable {
 
     private static final long serialVersionUID = 1L;
+
+    @ApiModelProperty("字典主键")
+    @NotNull
+    private Long dictId;
 
     @ApiModelProperty("字典名称")
     private String dictName;

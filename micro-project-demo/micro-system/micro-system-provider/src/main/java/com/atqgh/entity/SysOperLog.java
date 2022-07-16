@@ -3,13 +3,14 @@ package com.atqgh.entity;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
+import java.util.Date;
 import lombok.Data;
 
 /**
  * 操作日志记录.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @Data
 @TableName("sys_oper_log")
@@ -21,7 +22,7 @@ public class SysOperLog implements Serializable {
      * 日志主键.
      */
     @TableId
-    private Long id;
+    private Long operId;
 
     /**
      * 模块标题.

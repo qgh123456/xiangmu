@@ -12,7 +12,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
  * 菜单权限表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @Data
 @TableName("sys_menu")
@@ -24,12 +24,7 @@ public class SysMenu implements Serializable {
      * 菜单ID.
      */
     @TableId
-    private Long id;
-
-    /**
-     * 菜单编码.
-     */
-    private String menuCode;
+    private Long menuId;
 
     /**
      * 菜单名称.
@@ -37,9 +32,9 @@ public class SysMenu implements Serializable {
     private String menuName;
 
     /**
-     * 父菜单编码.
+     * 父菜单ID.
      */
-    private String parentCode;
+    private Long parentId;
 
     /**
      * 显示顺序.

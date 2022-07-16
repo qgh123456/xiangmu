@@ -7,14 +7,14 @@ import com.atqgh.dto.SysRoleDeptDto;
 import com.atqgh.dto.SysRoleDeptPageDto;
 import com.atqgh.entity.SysRoleDept;
 import java.util.Set;
-import java.util.List;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.springframework.lang.NonNull;
 
 /**
  * 角色和部门关联表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 public interface SysRoleDeptService extends IService<SysRoleDept> {
 
@@ -24,7 +24,7 @@ public interface SysRoleDeptService extends IService<SysRoleDept> {
      * @param addVo 保存参数
      * @return 返回数据
      */
-    int insert(SysRoleDeptAddVo addVo);
+    int insert(@NonNull SysRoleDeptAddVo addVo);
 
     /**
      * 修改.
@@ -32,22 +32,22 @@ public interface SysRoleDeptService extends IService<SysRoleDept> {
      * @param updateVo 修改参数
      * @return 返回数据
      */
-    int update(SysRoleDeptUptVo updateVo);
+    int update(@NonNull SysRoleDeptUptVo updateVo);
 
      /**
      * 根据主键批量删除数据.
      *
      * @param pks 主键
      */
-    void batchDel(Set<String> pks);
+    void batchDel(@NonNull Set<Long> pks);
 
     /**
      * 根据主键查询.
      *
-     * @param roleCode 主键
+     * @param roleId 主键
      * @return 返回集合数据
      */
-    SysRoleDeptDto getDetail(String roleCode);
+    SysRoleDeptDto getDetail(@NonNull Long roleId);
 
     /**
      * 分页查询.
@@ -55,6 +55,6 @@ public interface SysRoleDeptService extends IService<SysRoleDept> {
      * @param queryVo 查询参数
      * @return 返回集合数据
      */
-//    PageInfo<SysRoleDeptPageDto> queryPageByWrapper(SysRoleDeptQueryVo queryVo);
+//    PageInfo<SysRoleDeptPageDto> queryPageByWrapper(@NonNull SysRoleDeptQueryVo queryVo);
 
 }

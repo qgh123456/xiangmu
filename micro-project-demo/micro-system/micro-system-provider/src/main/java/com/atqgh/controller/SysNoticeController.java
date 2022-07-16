@@ -14,11 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 import io.swagger.annotations.ApiParam;
-import com.atqgh.vo.SysNoticeQueryVo;
 import com.atqgh.vo.SysNoticeAddVo;
 import com.atqgh.vo.SysNoticeUptVo;
 import com.atqgh.dto.SysNoticeDto;
-import com.atqgh.dto.SysNoticePageDto;
 import com.atqgh.service.SysNoticeService;
 import java.util.Set;
 
@@ -26,7 +24,7 @@ import java.util.Set;
  * 通知公告.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:08
+ * @date 2022-07-11 21:54:00
  */
 @Api(tags = "通知公告")
 @RestController
@@ -35,20 +33,6 @@ public class SysNoticeController {
 
     @Resource
     private SysNoticeService sysNoticeService;
-
-    /**
-     * 分页查询通知公告.
-     *
-     * @param queryVo              查询对象实体
-     * @return page
-     */
-//    @GetMapping("/page")
-//    @ApiOperation(value = "分页查询通知公告", notes = "分页查询通知公告", produces = "application/json")
-//    public Result<PageInfo<SysNoticePageDto>, Object> page(@ApiParam("查询参数") SysNoticeQueryVo queryVo) {
-//
-//        PageInfo<SysNoticePageDto> pageInfo = this.sysNoticeService.queryPageByWrapper(queryVo);
-//        return Result.success(pageInfo);
-//    }
 
     /**
      * 新增通知公告.
@@ -96,15 +80,15 @@ public class SysNoticeController {
     /**
     * 查看通知公告.
     *
-    * @param id 主键
+    * @param noticeId 主键
     * @return 详情信息
     */
-    @GetMapping("/{id}")
-    @ApiOperation(value = "根据id主键查看数据", notes = "根据id主键查看数据", produces = "application/json")
-    public ResultObj getDetail(@PathVariable(value = "id") Integer id) {
+    @GetMapping("/{noticeId}")
+    @ApiOperation(value = "根据noticeId主键查看数据", notes = "根据noticeId主键查看数据", produces = "application/json")
+    public ResultObj getDetail(@PathVariable(value = "noticeId") Integer noticeId) {
 
         // 通过主键查看数据
-        SysNoticeDto dto = this.sysNoticeService.getDetail(id);
+        SysNoticeDto dto = this.sysNoticeService.getDetail(noticeId);
         return ResultObj.ok().setData(dto);
     }
 

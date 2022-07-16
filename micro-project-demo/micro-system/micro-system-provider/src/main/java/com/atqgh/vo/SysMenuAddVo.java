@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
  * 菜单权限表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @ApiModel
 @Data
@@ -18,17 +18,16 @@ public class SysMenuAddVo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty("菜单编码")
+    @ApiModelProperty("菜单ID")
     @NotNull
-    private String menuCode;
+    private Long menuId;
 
     @ApiModelProperty("菜单名称")
     @NotNull
     private String menuName;
 
-    @ApiModelProperty("父菜单编码")
-    @NotNull
-    private String parentCode;
+    @ApiModelProperty("父菜单ID")
+    private Long parentId;
 
     @ApiModelProperty("显示顺序")
     private Integer orderNum;

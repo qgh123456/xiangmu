@@ -14,11 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 import io.swagger.annotations.ApiParam;
-import com.atqgh.vo.SysRoleDeptQueryVo;
 import com.atqgh.vo.SysRoleDeptAddVo;
 import com.atqgh.vo.SysRoleDeptUptVo;
 import com.atqgh.dto.SysRoleDeptDto;
-import com.atqgh.dto.SysRoleDeptPageDto;
 import com.atqgh.service.SysRoleDeptService;
 import java.util.Set;
 
@@ -26,7 +24,7 @@ import java.util.Set;
  * 角色和部门关联.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @Api(tags = "角色和部门关联")
 @RestController
@@ -35,20 +33,6 @@ public class SysRoleDeptController {
 
     @Resource
     private SysRoleDeptService sysRoleDeptService;
-
-    /**
-     * 分页查询角色和部门关联.
-     *
-     * @param queryVo              查询对象实体
-     * @return page
-     */
-//    @GetMapping("/page")
-//    @ApiOperation(value = "分页查询角色和部门关联", notes = "分页查询角色和部门关联", produces = "application/json")
-//    public Result<PageInfo<SysRoleDeptPageDto>, Object> page(@ApiParam("查询参数") SysRoleDeptQueryVo queryVo) {
-//
-//        PageInfo<SysRoleDeptPageDto> pageInfo = this.sysRoleDeptService.queryPageByWrapper(queryVo);
-//        return Result.success(pageInfo);
-//    }
 
     /**
      * 新增角色和部门关联.
@@ -86,7 +70,7 @@ public class SysRoleDeptController {
      */
     @DeleteMapping("/batchDel/{pks}")
     @ApiOperation(value = "根据角色和部门关联主键批量删除数据", notes = "根据角色和部门关联主键批量删除数据", produces = "application/json")
-    public ResultObj batchDel(@ApiParam("主键") @PathVariable(value = "pks") Set<String> pks) {
+    public ResultObj batchDel(@ApiParam("主键") @PathVariable(value = "pks") Set<Long> pks) {
 
         // 通过主键批量删除数据
         this.sysRoleDeptService.batchDel(pks);
@@ -96,15 +80,15 @@ public class SysRoleDeptController {
     /**
     * 查看角色和部门关联.
     *
-    * @param roleCode 主键
+    * @param roleId 主键
     * @return 详情信息
     */
-    @GetMapping("/{roleCode}")
-    @ApiOperation(value = "根据roleCode主键查看数据", notes = "根据roleCode主键查看数据", produces = "application/json")
-    public ResultObj getDetail(@PathVariable(value = "roleCode") String roleCode) {
+    @GetMapping("/{roleId}")
+    @ApiOperation(value = "根据roleId主键查看数据", notes = "根据roleId主键查看数据", produces = "application/json")
+    public ResultObj getDetail(@PathVariable(value = "roleId") Long roleId) {
 
         // 通过主键查看数据
-        SysRoleDeptDto dto = this.sysRoleDeptService.getDetail(roleCode);
+        SysRoleDeptDto dto = this.sysRoleDeptService.getDetail(roleId);
         return ResultObj.ok().setData(dto);
     }
 

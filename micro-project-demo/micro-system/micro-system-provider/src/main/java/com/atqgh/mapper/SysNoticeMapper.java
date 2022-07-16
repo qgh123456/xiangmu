@@ -12,7 +12,7 @@ import org.springframework.beans.BeanUtils;
  * 通知公告表.
  * 
  * @author Mubai
- * @date 2022-07-03 15:31:08
+ * @date 2022-07-11 21:54:00
  */
 @Mapper
 public interface SysNoticeMapper extends BaseMapper<SysNotice> {

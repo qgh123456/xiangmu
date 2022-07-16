@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 /**
  * 代码生成业务表字段.
  * @author Mubai
- * @date 2022-07-03 15:31:08
+ * @date 2022-07-11 21:53:59
  */
 @ApiModel
 @Data
@@ -19,7 +19,7 @@ public class GenTableColumnUptVo implements Serializable {
 
     @ApiModelProperty("编号")
     @NotNull
-    private Long id;
+    private Long columnId;
 
     @ApiModelProperty("归属表编号")
     private String tableId;

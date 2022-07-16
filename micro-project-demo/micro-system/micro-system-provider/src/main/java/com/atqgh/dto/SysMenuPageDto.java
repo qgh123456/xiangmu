@@ -10,7 +10,7 @@ import lombok.Data;
  * 菜单权限表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @ApiModel
 @Data
@@ -22,13 +22,7 @@ public class SysMenuPageDto implements Serializable {
      * 菜单ID.
      */
     @ApiModelProperty("菜单ID")
-    private Long id;
-
-    /**
-     * 菜单编码.
-     */
-    @ApiModelProperty("菜单编码")
-    private String menuCode;
+    private Long menuId;
 
     /**
      * 菜单名称.
@@ -37,10 +31,10 @@ public class SysMenuPageDto implements Serializable {
     private String menuName;
 
     /**
-     * 父菜单编码.
+     * 父菜单ID.
      */
-    @ApiModelProperty("父菜单编码")
-    private String parentCode;
+    @ApiModelProperty("父菜单ID")
+    private Long parentId;
 
     /**
      * 显示顺序.

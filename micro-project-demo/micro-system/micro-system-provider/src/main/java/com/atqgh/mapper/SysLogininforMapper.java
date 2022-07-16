@@ -12,7 +12,7 @@ import org.springframework.beans.BeanUtils;
  * 系统访问记录.
  * 
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:53:59
  */
 @Mapper
 public interface SysLogininforMapper extends BaseMapper<SysLogininfor> {

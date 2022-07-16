@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
  * 角色和部门关联表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @ApiModel
 @Data
@@ -20,10 +20,10 @@ public class SysRoleDeptAddVo implements Serializable {
 
     @ApiModelProperty("角色ID")
     @NotNull
-    private String roleCode;
+    private Long roleId;
 
     @ApiModelProperty("部门ID")
     @NotNull
-    private String deptCode;
+    private Long deptId;
 
 }

@@ -1,17 +1,20 @@
 package com.atqgh.service;
 
-import com.atqgh.system.dto.SysUserDto;
+import com.atqgh.vo.SysUserQueryVo;
 import com.atqgh.vo.SysUserAddVo;
 import com.atqgh.vo.SysUserUptVo;
+import com.atqgh.dto.SysUserDto;
+import com.atqgh.dto.SysUserPageDto;
 import com.atqgh.entity.SysUser;
 import java.util.Set;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.springframework.lang.NonNull;
 
 /**
  * 用户信息表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:10
+ * @date 2022-07-11 21:54:00
  */
 public interface SysUserService extends IService<SysUser> {
 
@@ -21,7 +24,7 @@ public interface SysUserService extends IService<SysUser> {
      * @param addVo 保存参数
      * @return 返回数据
      */
-    int insert(SysUserAddVo addVo);
+    int insert(@NonNull SysUserAddVo addVo);
 
     /**
      * 修改.
@@ -29,14 +32,14 @@ public interface SysUserService extends IService<SysUser> {
      * @param updateVo 修改参数
      * @return 返回数据
      */
-    int update(SysUserUptVo updateVo);
+    int update(@NonNull SysUserUptVo updateVo);
 
      /**
      * 根据主键批量删除数据.
      *
      * @param pks 主键
      */
-    void batchDel(Set<Long> pks);
+    void batchDel(@NonNull Set<Long> pks);
 
     /**
      * 根据主键查询.
@@ -44,15 +47,7 @@ public interface SysUserService extends IService<SysUser> {
      * @param userId 主键
      * @return 返回集合数据
      */
-    SysUserDto getDetail(Long userId);
-
-    /**
-     * 通过用户名获取用户详情.
-     *
-     * @param username 用户名
-     * @return 详情
-     */
-    SysUserDto findByUsername(String username);
+    SysUserDto getDetail(@NonNull Long userId);
 
     /**
      * 分页查询.
@@ -60,6 +55,6 @@ public interface SysUserService extends IService<SysUser> {
      * @param queryVo 查询参数
      * @return 返回集合数据
      */
-//    PageInfo<SysUserPageDto> queryPageByWrapper(SysUserQueryVo queryVo);
+//    PageInfo<SysUserPageDto> queryPageByWrapper(@NonNull SysUserQueryVo queryVo);
 
 }

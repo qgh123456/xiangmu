@@ -9,7 +9,7 @@ import lombok.Data;
  * 角色和菜单关联表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @Data
 @TableName("sys_role_menu")
@@ -21,11 +21,11 @@ public class SysRoleMenu implements Serializable {
      * 角色ID.
      */
     @TableId
-    private String roleCode;
+    private Long roleId;
 
     /**
      * 菜单ID.
      */
-    private String menuCode;
+    private Long menuId;
 
 }

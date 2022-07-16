@@ -2,7 +2,6 @@ package com.atqgh.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.util.Date;
 import lombok.Data;
@@ -13,7 +12,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
  * 角色信息表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @Data
 @TableName("sys_role")
@@ -26,12 +25,6 @@ public class SysRole implements Serializable {
      */
     @TableId
     private Long roleId;
-
-    /**
-     * 编码.
-     */
-    @ApiModelProperty("编码")
-    private String code;
 
     /**
      * 角色名称.

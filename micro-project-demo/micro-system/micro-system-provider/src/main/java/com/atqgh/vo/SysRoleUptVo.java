@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 /**
  * 角色信息表.
  * @author Mubai
- * @date 2022-07-03 15:31:09
+ * @date 2022-07-11 21:54:00
  */
 @ApiModel
 @Data
@@ -20,12 +20,6 @@ public class SysRoleUptVo implements Serializable {
     @ApiModelProperty("角色ID")
     @NotNull
     private Long roleId;
-
-    /**
-     * 编码.
-     */
-    @ApiModelProperty("编码")
-    private String code;
 
     @ApiModelProperty("角色名称")
     @NotNull

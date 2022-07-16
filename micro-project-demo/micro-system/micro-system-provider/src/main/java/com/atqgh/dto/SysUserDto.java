@@ -10,10 +10,10 @@ import lombok.Data;
  * 用户信息表.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:10
+ * @date 2022-07-11 21:54:00
  */
-@Data
 @ApiModel
+@Data
 public class SysUserDto implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -23,12 +23,6 @@ public class SysUserDto implements Serializable {
      */
     @ApiModelProperty("用户ID")
     private Long userId;
-
-    /**
-     * 编码.
-     */
-    @ApiModelProperty("编码")
-    private String code;
 
     /**
      * 部门ID.

@@ -14,11 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 import io.swagger.annotations.ApiParam;
-import com.atqgh.vo.SysJobLogQueryVo;
 import com.atqgh.vo.SysJobLogAddVo;
 import com.atqgh.vo.SysJobLogUptVo;
 import com.atqgh.dto.SysJobLogDto;
-import com.atqgh.dto.SysJobLogPageDto;
 import com.atqgh.service.SysJobLogService;
 import java.util.Set;
 
@@ -26,7 +24,7 @@ import java.util.Set;
  * 定时任务调度日志.
  *
  * @author Mubai
- * @date 2022-07-03 15:31:08
+ * @date 2022-07-11 21:53:59
  */
 @Api(tags = "定时任务调度日志")
 @RestController
@@ -35,20 +33,6 @@ public class SysJobLogController {
 
     @Resource
     private SysJobLogService sysJobLogService;
-
-    /**
-     * 分页查询定时任务调度日志.
-     *
-     * @param queryVo              查询对象实体
-     * @return page
-     */
-//    @GetMapping("/page")
-//    @ApiOperation(value = "分页查询定时任务调度日志", notes = "分页查询定时任务调度日志", produces = "application/json")
-//    public Result<PageInfo<SysJobLogPageDto>, Object> page(@ApiParam("查询参数") SysJobLogQueryVo queryVo) {
-//
-//        PageInfo<SysJobLogPageDto> pageInfo = this.sysJobLogService.queryPageByWrapper(queryVo);
-//        return Result.success(pageInfo);
-//    }
 
     /**
      * 新增定时任务调度日志.
@@ -96,15 +80,15 @@ public class SysJobLogController {
     /**
     * 查看定时任务调度日志.
     *
-    * @param id 主键
+    * @param jobLogId 主键
     * @return 详情信息
     */
-    @GetMapping("/{id}")
-    @ApiOperation(value = "根据id主键查看数据", notes = "根据id主键查看数据", produces = "application/json")
-    public ResultObj getDetail(@PathVariable(value = "id") Long id) {
+    @GetMapping("/{jobLogId}")
+    @ApiOperation(value = "根据jobLogId主键查看数据", notes = "根据jobLogId主键查看数据", produces = "application/json")
+    public ResultObj getDetail(@PathVariable(value = "jobLogId") Long jobLogId) {
 
         // 通过主键查看数据
-        SysJobLogDto dto = this.sysJobLogService.getDetail(id);
+        SysJobLogDto dto = this.sysJobLogService.getDetail(jobLogId);
         return ResultObj.ok().setData(dto);
     }
 
