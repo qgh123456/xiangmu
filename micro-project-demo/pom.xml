@@ -11,7 +11,6 @@
         <module>micro-common</module>
 <!--        <module>micro-common/micro-common-core</module>-->
 <!--        <module>micro-common/micro-common-security</module>-->
-        <module>micro-auth</module>
         <module>micro-gateway</module>
         <module>micro-system</module>
 
